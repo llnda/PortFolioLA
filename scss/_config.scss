@@ -1,0 +1,11 @@
+$primary-color: rgb(219, 143, 29);
+$secondary-color: hsl(60, 9%, 90%);
+$tertiary-color: rgb(62, 60, 58);
+
+$bgImg: url(../img/bg5.jpg);
+
+//functions
+
+@mixin easeOut {
+  transition: all 0.7s ease-out;
+}

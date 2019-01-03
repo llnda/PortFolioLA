@@ -1,0 +1,105 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  left: 2rem;
+  top: 2rem;
+  cursor: url(../img/pointer.png), auto;
+  @include easeOut;
+
+  .btn-line {
+    width: 2rem;
+    height: 3px;
+    margin: 0 0 0.2rem 0;
+    background: $primary-color;
+    @include easeOut;
+  }
+  .charact {
+    display: block;
+    width: 2rem;
+    margin: 0 0 0.2rem 0.5rem;
+    align: center;
+  }
+  &.close {
+    .btn-line {
+      transform: rotate(90deg);
+      background: $secondary-color;
+    }
+
+    .charact {
+      color: transparent;
+
+      &:nth-child(2):after {
+        content: "LA";
+        color: $secondary-color;
+      }
+    }
+  }
+}
+// menu overlay
+.menu {
+  position: fixed;
+  top: 0;
+  width: 20%;
+  opacity: 0.9;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
+
+  &-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  &-nav {
+    margin: 0;
+    padding: 0;
+    background: lighten($primary-color, 5);
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    // (gaat pas open als je klikt via .show zie hieronder - -100% komt van boven, 100% komt van onder
+    @include easeOut;
+    &.show {
+      //slide in from top
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .nav-item {
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
+
+    &.show {
+      //slide in from right
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.current > a {
+      color: $secondary-color;
+    }
+  }
+  .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    color: $tertiary-color;
+    text-decoration: none;
+    // @include easeOut;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
+  }
+}
