@@ -6,17 +6,111 @@
 }
 
 body {
-  font-family: "Thasadith", sans-serif;
+  background: $tertiary-color;
+  font-family: "PT Sans", "Dosis", Tahoma;
+  height: 100%;
+  margin: 0;
   color: $primary-color;
+  @include background;
+  //cursor: url(../img/pointerS.png), auto;
+}
+
+//header
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
 }
 
 a {
-  color: darken($primary-color, 15);
+  color: $primary-color;
   text-decoration: none;
 }
+.text2 {
+  color: $secondary-color;
+}
+//Headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Thasadith", Tahoma;
+  &.head1 {
+    font-size: 4rem;
+    font-weight: bolder;
+  }
+  &.head2 {
+    font-size: 2.5rem;
+  }
+}
 
-body {
-  background: $bgImg;
-  background-attachment: fixed;
-  background-size: cover;
+main {
+  .centered {
+    padding-left: 11rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+  }
+  .icons {
+    margin-top: 1rem;
+    a {
+      padding: 0.4rem;
+      &:hover {
+        color: $secondary-color;
+        @include easeOut;
+      }
+    }
+  }
+  &#home {
+    overflow: hidden;
+    //no scrollbarss!
+  }
+}
+
+//over
+#over {
+  color: lighten($primary-color, 5%);
+
+  opacity: 0.9;
+  .about-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+      "bioImage bio bio bio"
+      "job1 job2 job3 job4";
+    grid-template-columns: repeat(4, 1fr);
+    .bio-image {
+      grid-area: bioImage;
+      height: 10rem;
+      width: 10rem;
+      margin: auto;
+      border-radius: 50%;
+      border: $secondary-color 5px solid;
+    }
+    .bio {
+      grid-area: bio;
+      font-size: 1.5rem;
+    }
+    .job-1 {
+      grid-area: job1;
+    }
+    .job-2 {
+      grid-area: job2;
+    }
+    .job-3 {
+      grid-area: job3;
+    }
+    .job-4 {
+      grid-area: job4;
+    }
+    .job {
+      background: lighten($tertiary-color, 10%);
+      color: darken($primary-color, 80%);
+      padding: 0.5rem;
+      border-bottom: $secondary-color 5px solid;
+    }
+  }
 }

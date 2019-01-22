@@ -1,11 +1,37 @@
 $primary-color: rgb(219, 143, 29);
-$secondary-color: hsl(60, 9%, 90%);
-$tertiary-color: rgb(62, 60, 58);
-
-$bgImg: url(../img/bg5.jpg);
+$secondary-color: rgb(219, 225, 249);
+$tertiary-color: rgb(172, 134, 149);
+$show-home-image: true;
+$homeImg: url(../img/bg5.jpg);
+$background-opacity: 0.18;
 
 //functions
 
 @mixin easeOut {
   transition: all 0.7s ease-out;
+}
+@mixin background {
+  @if $show-home-image {
+    &#bg-img {
+      background: $homeImg;
+      background-attachment: fixed;
+      //enkel deel van de foto is zichtbaar
+      background-size: cover;
+
+      &:after {
+        content: "";
+        // pseudo-element after, als je wat wil wijzigen aan hetgeen ervoor komt, in dit geval de backgroundimg - achter after moet je content''zetten
+
+        position: absolute;
+        // de hele foto bedekken
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($secondary-color, $background-opacity);
+        z-index: -1;
+        //zorgt dat de tekst naar voor komt
+      }
+    }
+  }
 }

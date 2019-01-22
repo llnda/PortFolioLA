@@ -3,7 +3,8 @@
   z-index: 3;
   left: 2rem;
   top: 2rem;
-  cursor: url(../img/pointer.png), auto;
+  //cursor: url(../img/pointerS.png), auto;
+  cursor: pointer;
   @include easeOut;
 
   .btn-line {
@@ -20,6 +21,8 @@
     align: center;
   }
   &.close {
+    //cursor: url(../img/pointerS.png), auto;
+    cursor: pointer;
     .btn-line {
       transform: rotate(90deg);
       background: $secondary-color;
@@ -39,10 +42,9 @@
 .menu {
   position: fixed;
   top: 0;
-  width: 20%;
+  min-width: 20rem;
   opacity: 0.9;
   visibility: hidden;
-
   &.show {
     visibility: visible;
   }
@@ -89,7 +91,7 @@
     font-size: 1.1rem;
     text-transform: uppercase;
     padding: 1rem 0;
-    color: $tertiary-color;
+    color: darken($primary-color, 80%);
     text-decoration: none;
     // @include easeOut;
 
