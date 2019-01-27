@@ -21,16 +21,14 @@
     align: center;
   }
   &.close {
-    //cursor: url(../img/pointerS.png), auto;
     cursor: pointer;
     .btn-line {
       transform: rotate(90deg);
       background: $secondary-color;
+      @include easeOut;
     }
-
     .charact {
       color: transparent;
-
       &:nth-child(2):after {
         content: "LA";
         color: $secondary-color;
@@ -93,7 +91,7 @@
     padding: 1rem 0;
     color: darken($primary-color, 80%);
     text-decoration: none;
-    // @include easeOut;
+    @include easeOut;
 
     &:hover {
       color: $secondary-color;
