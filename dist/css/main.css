@@ -14,8 +14,7 @@
   .menu-btn .charact {
     display: block;
     width: 2rem;
-    margin: 0 0 0.2rem 0.5rem;
-    align: center; }
+    margin: 0 0 0.2rem 0.5rem; }
   .menu-btn.close {
     cursor: pointer; }
     .menu-btn.close .btn-line {
