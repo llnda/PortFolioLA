@@ -140,14 +140,48 @@ main {
 }
 //werk
 #werk {
-  background-color: $secondary-color;
   height: 100vh;
   margin: 0;
   padding: 4rem 4rem 4rem 11rem;
   h3 {
     color: darken($primary-color, 80%);
   }
-  .text2 {
-    color: $tertiary-color;
+}
+.project {
+  padding-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+
+  img {
+    width: 100%;
+    border: 0.2rem $tertiary-color solid;
+    &:hover {
+      opacity: 0.6;
+      border-color: darken($tertiary-color, 50);
+      @include easeOut;
+    }
   }
+}
+// button styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin: 0.3rem;
+  &:hover {
+    background: darken($primary-color, 40);
+    color: $secondary-color;
+    @include easeOut;
+  }
+}
+.btn-dark {
+  @extend .btn;
+  background: darken($tertiary-color, 30);
+  color: lighten($tertiary-color, 30);
+}
+.btn-light {
+  @extend .btn;
+  background: lighten($tertiary-color, 30);
+  color: darken($tertiary-color, 30);
 }
