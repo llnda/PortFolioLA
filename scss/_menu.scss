@@ -6,7 +6,9 @@
   //cursor: url(../img/pointerS.png), auto;
   cursor: pointer;
   @include easeOut;
-
+  &:hover {
+    color: $secondary-color;
+  }
   .btn-line {
     width: 2rem;
     height: 3px;
@@ -59,7 +61,7 @@
   &-nav {
     margin: 0;
     padding: 0;
-    background: lighten($primary-color, 5);
+    background: lighten($primary-color, 5%);
     list-style: none;
     transform: translate3d(0, -100%, 0);
     // (gaat pas open als je klikt via .show zie hieronder - -100% komt van boven, 100% komt van onder
@@ -85,10 +87,11 @@
   .nav-link {
     display: inline-block;
     position: relative;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-weight: bolder;
     text-transform: uppercase;
     padding: 1rem 0;
-    color: darken($primary-color, 80%);
+    color: $quaternary-color;
     text-decoration: none;
     @include easeOut;
 
